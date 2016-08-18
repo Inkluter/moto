@@ -1,0 +1,23 @@
+{
+  "name": "bmw-moto",
+  "version": "0.0.1",
+  "description": "___",
+  "main": "bmw.js",
+  "scripts": {
+    "start": "concurrently --kill-others 'node bmw' 'gulp'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "_"
+  },
+  "author": "Ivan Leshchenko",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "colors": "^1.1.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "request": "^2.74.0"
+  }
+}
