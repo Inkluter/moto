@@ -1,15 +1,30 @@
 'use strict'
 
-var json = require('./model-links.json');
-var fs = require('fs');
 
+const fs = require('fs');
+const http = require('http');
+const cheerio = require('cheerio');
+const Q = require('q');
 
-for (var i = 0; i <json.length; i ++) {
-  var link = json[i];
+let arr = require('./model-links.json');
+let newArr = [];
 
-  json[i] = 'http://www.bmbikes.co.uk/' + link;
+for (let i=0;i<arr.length;i++) {
+  let modelName = arr[i].slice(10);
+  let newName = '';
+
+  for (let u=0;u<modelName.length;u++) {
+    if (modelName.charAt(u) == '.') { break };
+
+    newName += modelName.charAt(u);
+  };
+
+  newArr.push({
+    name: newName,
+    link: 'http://www.bmbikes.co.uk/specpages/' + arr[i]
+  });
 };
 
-var json = JSON.stringify(json);
+var json = JSON.stringify(newArr);
 
 fs.writeFile('model-links.json', json);
