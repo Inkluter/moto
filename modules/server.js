@@ -9,6 +9,10 @@ app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/../public/index.html'));
 });
 
+app.get('/item', function (req, res) {
+	res.sendFile(path.join(__dirname+'/../public/item.html'));
+});
+
 
 app.use(express.static('public'));
 

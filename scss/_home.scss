@@ -1,0 +1,133 @@
+// HERO
+// -----------------
+.find-hero {
+  min-height: $heroHeight;
+  background: url('../img/bg.jpg') center no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
+.find-hero:before {
+  content: '';
+  display: block;
+  background: rgba(0,0,0,.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.find-hero_content {
+  position: relative;
+  z-index: 2;
+  height: $heroHeight;
+}
+
+.hero-header {
+  text-align: center;
+  font-size: 50px;
+  font-weight:  bold;
+}
+
+
+
+// search form
+.search-block {
+  padding-top: 25vh;
+}
+.search-form_input {
+  width: 600px;
+  height: 40px;
+  padding: 0 10px;
+  opacity: .9;
+  display: block;
+  margin: 10px auto;
+  background: #fff;
+  border: 0 none;
+  border-radius: 3px;
+
+  font-size: 18px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+
+
+// MODELS
+// -----------------
+.models_header {
+  font-size: 40px;
+  font-weight: 700;
+  padding: 60px 0;
+  text-align: center;;
+}
+.models-holder {
+  display: flex;
+}
+.models_item {
+  width: 25%;
+  height: 300px;
+  transition: all .3 ease;
+  position: relative;
+}
+.models_item:after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40%;
+  position: absolute;
+  left: 0;
+  top: 34%;
+  background: #999;
+}
+.models_item:first-child:after {
+  display: none;
+}
+.models_item:hover {
+  background-size: 90%;
+}
+
+.models_item__r {
+  background: url('../img/series/r.jpg') center no-repeat;
+  background-size: 80%;
+}
+.models_item__k {
+  background: url('../img/series/k.jpg') center no-repeat;
+  background-size: 80%;
+}
+.models_item__f {
+  background: url('../img/series/f.jpg') center no-repeat;
+  background-size: 80%;
+}
+.models_item__old {
+  background: url('../img/series/old.jpg') center no-repeat;
+  background-size: 80%;
+}
+
+.models_item-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.models_item-header {
+  font-size: 26px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+
+
+
+// FOOTER
+// -----------------
+.footer {
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 20px 0;
+}

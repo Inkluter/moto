@@ -8,7 +8,12 @@ let newArr = [];
 
 
 
-fs.readFile('specs/spec1.html', (error, data) => {
+for (let i=0;i<models.length;i++) {
+  let name = models[i].name;
+  let specs = [];
+
+  let data = fs.readFileSync('specs/spec' + i + '.html');
+
   let $ = cheerio.load(data);
   let tableRows = $('#AutoNumber1 > tr');
 
@@ -16,14 +21,19 @@ fs.readFile('specs/spec1.html', (error, data) => {
     let specHeader = $(el).find('td:nth-child(1) p').text();
     let specText = $(el).find('td:nth-child(2) p').text();
 
-    let modelName = models[i].name;
-
-    newArr.push({
-      name: modelName,
+    specs.push({
       specHeader: specHeader,
       specText: specText
     });
   });
 
-  console.log(newArr.length);
-});
+
+  newArr.push({
+    name: name,
+    specs: specs
+  })
+}
+
+var json = JSON.stringify(newArr);
+
+fs.writeFile('model-links-2.json', json);

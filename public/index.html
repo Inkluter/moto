@@ -2,16 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>BMW moto</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
   <main class="main">
+    <nav class="nav">
+      <ul class="nav-list nav-list__home">
+        <li class="nav-list-item nav-list-item__active">
+          <a href="">Home</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="">Models</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="">About</a>
+        </li>
+      </ul>
+    </nav>
     <div class="find-hero">
-      
+      <div class="find-hero_content">
+        <div class="search-block">
+          <h1 class="hero-header">
+            Search
+          </h1>
+          <form class="search-form">
+            <input class="search-form_input" class="" type="text">
+            <!-- <button class="search-form_button"></button> -->
+          </form>
+        </div>
+      </div>
     </div>
+    <section class="models">
+      <!-- <h2 class="models_header">Explore BMW series bikes</h2> -->
+      <div class="models-holder">
+        <div class="models_item models_item__r">
+          <a class="models_item-link" href="/item">
+            <h3 class="models_item-header">R series</h3>
+          </a>
+        </div>
+        <div class="models_item models_item__k">
+          <a class="models_item-link" href="/item">
+            <h3 class="models_item-header">K series</h3>
+          </a>
+        </div>
+        <div class="models_item models_item__f">
+          <a class="models_item-link" href="/item">
+            <h3 class="models_item-header">F series</h3>
+          </a>
+        </div>
+        <div class="models_item models_item__old">
+          <a class="models_item-link" href="/item">
+            <h3 class="models_item-header">Old series</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      BMW bikes © 2016
+    </footer>
   </main>
 
 </body>
