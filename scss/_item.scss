@@ -1,6 +1,52 @@
+// BIKE
+// -----------------
 .bike {
-  padding: 140px 0;
+  padding: 100px 0;
 }
 .bike_header {
   font-size: 36px;
+  border-bottom: 3px solid #999;
+  padding-bottom: 15px;
+}
+.bike_subheader {
+  font-size: 28px;
+  border-bottom: 3px solid #999;
+  padding-bottom: 15px;
+}
+.bike_gallery {
+  // margin: 40px 0;
+  max-height: 50vh;
+}
+
+
+// main-info-table
+.main-info-table {
+  margin: 40px 0;
+  font-size: 20px;
+}
+.main-info-table tr {
+  border-bottom: 1px solid #ccc;
+}
+.main-info-table tr:last-child {
+  border-bottom: 0 none;
+}
+.main-info-table td {
+  padding: 10px 0;
+}
+.main-info-table td:first-child {
+  padding-right: 20px;
+  font-weight: bold;
+  border-right: 1px solid #ccc;
+}
+.main-info-table td:last-child {
+  padding-left: 20px;
+}
+
+// bike_about
+.bike_about {
+  margin: 30px 0;
+}
+.bike_about p {
+  font-size: 18px;
+  margin: 20px 0;
 }

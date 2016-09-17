@@ -6,6 +6,7 @@ html * {
 }
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  color: #333;
 }
 a, a:hover {
   color: inherit;
@@ -14,12 +15,37 @@ a, a:hover {
 
 
 
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  margin: 0 -20px;
+}
+.col {
+  width: 100%;
+  padding: 0 20px;
+}
+.col-50 {
+  width: 50%;
+}
+.col-65 {
+  width: 65%;
+}
+
+
+
+
+
+
+
 // NAV
 // -----------------
 nav {
   position: absolute;
   top: 30px;
-  right: 40px;
+  left: 40px;
   z-index: 3;
 }
 .nav-list__home {
