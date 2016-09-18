@@ -18,8 +18,8 @@ for (let i=0;i<models.length;i++) {
   let tableRows = $('#AutoNumber1 > tr');
 
   tableRows.each(function(i, el) {
-    let specHeader = $(el).find('td:nth-child(1) p').text();
-    let specText = $(el).find('td:nth-child(2) p').text();
+    let specHeader = $(el).find('td:nth-child(1) p').text().replace(/(\r\n|\n|\r)/gm," ").replace(/\s+/g," ").trim();
+    let specText = $(el).find('td:nth-child(2) p').text().replace(/(\r\n|\n|\r)/gm," ").replace(/\s+/g," ").trim();
 
     specs.push({
       specHeader: specHeader,
@@ -36,4 +36,4 @@ for (let i=0;i<models.length;i++) {
 
 var json = JSON.stringify(newArr);
 
-fs.writeFile('model-links-2.json', json);
+fs.writeFile('specs.json', json);
