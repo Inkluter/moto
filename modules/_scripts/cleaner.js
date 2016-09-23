@@ -7,55 +7,81 @@ let arr = require('./specs-raw.json');
 let newArr = [];
 
 
-function model() {
-  // name: '',
-  // specs: {
-  //   main: {},
-  //   enngine: {},
-  //   transmission: {},
-  //   electric: {},
-  //   chassis: {},
-  //   dimensions: {}
-  // }
-};
+// subarr
+let subArr = [
+  {
+    name: 'production',
+    text: 'Production'
+  },
+  {
+    name: 'engine',
+    text: 'Engine'
+  },
+  {
+    name: 'transmission',
+    text: 'Power Transmission'
+  },
+  {
+    name: 'electrical',
+    text: 'Electrical System'
+  },
+  {
+    name: 'chassis',
+    text: 'Chassis'
+  },
+  {
+    name: 'weights',
+    text: 'Dimensions/Weights'
+  }
 
-let subArr = ['Start of Production', 'Engine', 'Transmission', 'Clutch', 'Electrical System', 'Chassis', 'Dimensions/Weights'];
+];
 
 
 
-for (var i = 0; i<arr.length; i++) {
+
+
+// last index
+let lastIndex = 0;
+let lastSubArrIndex = 0;
+
+
+
+// main cycle
+for (var i=0; i<arr.length; i++) {
+
+  lastSubArrIndex = 0;
 
   let model = arr[i];
+  let newModel = {};
+  newModel.name = model.name;
+  newModel.specs = {};
 
-  // lets work only with first element
+  let spec = '';
 
+  // item specs cycle
+  for (var j=0; j<model.specs.length; j++) {
+    // if (subArr[lastSubArrIndex] == undefined) {
+    //   break;
+    // }
 
-    let newModel = {};
-    newModel.name = model.name;
-    newModel.specs = [];
+    if (subArr[lastSubArrIndex] && model.specs[j].specHeader == subArr[lastSubArrIndex].text) {
+      spec = subArr[lastSubArrIndex].name;
+      newModel.specs[spec] = [];
+      lastSubArrIndex++;
+    }else{
 
-    // holds last iterstion step, for make new subtree
-    let lastIndex = 0;
+    newModel.specs[spec].push({
+      header: model.specs[j].specHeader,
+      text: model.specs[j].specText
+    });
+  }
 
-    // go through specs array
-    for (var j = 0; j<model.specs.length; j++ ) {
-      if (model.specs[j].specHeader.length > 2 && model.specs[j].specHeader.length < 40) {
-        newModel.specs.push(model.specs[j]);
-      }
-    }
+  }
 
-    newArr.push(newModel);
-
+  newArr.push(newModel);
 
 }
 
-var json = JSON.stringify(newArr);
-fs.writeFile('specs.json', json);
+let json = JSON.stringify(newArr);
 
-
-
-// let str = arr[0].specs[0].specHeader.replace(/(\r\n|\n|\r)/gm," ").replace(/\s+/g," ").trim();
-//
-// console.log(arr[1].specs.length);
-
-// console.log(arr[0]);
+fs.writeFile('new-2.json', json)
