@@ -1,14 +1,10 @@
 BMW motorcycles site
 =============================
 
-
-INSTALLATION
+Installation
 ------------
-
-
       npm install
 
-
-START
+Start
 -----------
       gulp
