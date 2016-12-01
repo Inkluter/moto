@@ -19,4 +19,4 @@ gulp.task('express', shell.task([
   'node bmw.js'
 ]));
 
-gulp.task('default', ['express', 'sass:watch']);
+gulp.task('default', ['express', 'sass', 'sass:watch']);
